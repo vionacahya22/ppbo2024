@@ -46,6 +46,6 @@ $nasi_tumpeng = new Kerucut();
 
 $volume_nasi_tumpeng = $nasi_tumpeng->volume(4, 10);
 
-echo "Volume nasi tumpeng adalah: " . $volume_nasi_tumpeng . "cm^3";
+echo "Volume nasi tumpeng adalahh: " . $volume_nasi_tumpeng . "cm^3";
 
 ?>
