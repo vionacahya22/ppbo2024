@@ -1,69 +1,17 @@
 <?php
 
-class Author {
-    private string $name;
-    private string $description;
+require_once 'Author.php';
+require_once 'Book.php';
+require_once 'Publisher.php';
 
-    public function __construct(string $name, string $description) {
-        $this->name = $name;
-        $this->description = $description;
-    }
+$author = new Author("J.K. Rowling", "Famous author of Harry Potter series");
+$publisher = new Publisher("Bloomsbury", "London");
 
-    public function show(string $type): array {
-        return [];
-    }
-}
+$publisher->setPhone(123456789);
 
-class Book {
-    private int $ISBN;
-    private string $title;
-    private string $description;
-    private string $category;
-    private string $language;
-    private int $numberOfPage;
-    private string $author;
-    private string $publisher;
+$book = new Book(1234567890, "Harry Potter", "A magical story", "Fantasy", "English", 500, $author(), $publisher());
 
-    public function __construct(int $ISBN, string $title, string $description, string $category, 
-                                string $language, int $numberOfPage, string $author, string $publisher) {
-        $this->ISBN = $ISBN;
-        $this->title = $title;
-        $this->description = $description;
-        $this->category = $category;
-        $this->language = $language;
-        $this->numberOfPage = $numberOfPage;
-        $this->author = $author;
-        $this->publisher = $publisher;
-    }
+print_r($book->showAll());
 
-    public function showAll(): array {
-        return [];
-    }
-
-    public function detail(int $ISBN): array {
-        return [];
-    }
-}
-
-class Publisher {
-    private string $name;
-    private string $address;
-    private string $phone;
-
-    public function __construct(string $name, string $address) {
-        $this->name = $name;
-        $this->address = $address;
-        $this->phone = "";
-    }
-
-    public function setPhone(int $phone): void {
-        $this->phone = (string)$phone;
-    }
-
-    public function getPhone(): int {
-        return (int)$this->phone;
-    }
-}
-
-
+echo $publisher->getPhone();
 ?>
